@@ -35,7 +35,7 @@ All local links and assets use relative paths, so the site works from that repos
 
 ## Meta Pixel setup
 
-Open [`js/tracking.js`](js/tracking.js). At the top, replace the exact placeholder in `const META_PIXEL_ID = "YOUR_PIXEL_ID";` with your real numeric Pixel ID. Until then, the tracking functions are inert and no Pixel requests are sent.
+Meta Pixel ID `2570376396769911` is installed in the `<head>` of every HTML page. The no-script image fallback sits immediately inside each `<body>` so the HTML remains valid. [`js/tracking.js`](js/tracking.js) sends the product, cart, checkout, and purchase events through the Pixel initialized by those page snippets. If the Pixel ID changes, update it in all HTML files and in `js/tracking.js`.
 
 The file has beginner-friendly helpers for PageView (every page), ViewContent (product page), AddToCart (add button), InitiateCheckout (checkout page), and Purchase (success page). Event data uses product IDs, values, and `LKR`. Purchase fires once per order in that browser when the success page loads. Test your own Pixel installation with Meta's Test Events tool after adding the ID.
 
